@@ -92,7 +92,7 @@ class ThreadRun extends java.lang.Thread
                 for(Bot bot: Bots)
                 {
                     try {
-                        Send(bot.botName(), msg, bot.token(), id);
+                        Send(bot.botName, msg, bot.token, id);
                     } catch (IOException e) {
                         run();
                         throw new RuntimeException(e);
@@ -138,8 +138,13 @@ class ThreadRun extends java.lang.Thread
 
 }
 
-record Bot(
-        String botName,
-        String token
-
-){}
+class Bot
+{
+    Bot(String botName, String token)
+    {
+        this.botName = botName;
+        this.token = token;
+    }
+    public String botName;
+    public String token;
+}
