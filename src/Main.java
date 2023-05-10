@@ -41,7 +41,7 @@ public class Main {
         }
 
 
-        ThreadRun tr = new ThreadRun(channel_ids, Bots, timeout);
+        ThreadRun tr = new ThreadRun(channel_ids, Bots, maxtimeout, mintimeout);
         tr.run();
 
     }
