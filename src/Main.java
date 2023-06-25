@@ -2,7 +2,7 @@
 import java.io.*;
 import java.net.*;
 import java.nio.charset.StandardCharsets;
-iimport java.util.*;
+import java.util.*;
 
 public class Main {
 
@@ -56,7 +56,7 @@ class ThreadRun extends java.lang.Thread {
     ArrayList < Bot > Bots = new ArrayList < Bot > ();
     ArrayList < String > msgs = readFileLines("msg.txt");
     int maxtimeout;
-int mintimeout
+    int mintimeout;
     public ThreadRun(ArrayList < String > channel_ids, ArrayList < Bot > Bots, int maxtimeout, int mintimeout) throws IOException {
         this.channel_ids = channel_ids;
         this.Bots = Bots;
@@ -67,7 +67,7 @@ int mintimeout
     public void run() {
         for (String msg: msgs) {
             try {
-                sleep(rand.nextInt(maxtimeout - mintimeout + 1) + mintimeout);
+                sleep(maxtimeout);
             } catch (InterruptedException e) {
                 run();
                 throw new RuntimeException(e);
